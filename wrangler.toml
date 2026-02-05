@@ -1,1 +1,11 @@
+name = "mywmlz"
 compatibility_date = "2026-02-05"
+compatibility_flags = ["nodejs_compat"]
+
+main = "./dist/index.html"
+
+[site]
+bucket = "./dist"
+entry-point = "."
+
+[env.production]
