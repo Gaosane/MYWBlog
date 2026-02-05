@@ -7,6 +7,7 @@ category: Examples
 draft: false
 ---
 
+2026000 ,0116累死我了
 Here, we'll explore how code blocks look using [Expressive Code](https://expressive-code.com/). The provided examples are based on the official documentation, which you can refer to for further details.
 
 ## Expressive Code
