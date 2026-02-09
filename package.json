@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "fuwari",
+=======
+  "name": "myw",
+>>>>>>> b02c826d81f1b4c6656d0af037ed79ce3dcf200f
   "type": "module",
   "version": "0.0.1",
   "scripts": {
