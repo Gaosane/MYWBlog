@@ -1,8 +1,19 @@
+---
+title: myw2
+published: 2024-04-10
+description: How code blocks look in Markdown using Expressive Code.
+tags: [Markdown, Blogging, Demo]
+category: Examples
+draft: false
+---
+
+
+
+
+
+
 # MYW
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
-
-::github{repo="saicaca/fuwari"}
-
+sb
 
 
 
