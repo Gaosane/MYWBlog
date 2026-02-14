@@ -19,16 +19,16 @@ export const LinkPresets: { [key in LinkPreset]: NavBarLink } = {
 		name: i18n(I18nKey.question),
 		url: "/question/",
 	},
-	[LinkPreset.Lc]: {
-		name: i18n(I18nKey.lc),
-		url: "/lc/",
-	},
-	[LinkPreset.Myw]: {
-		name: i18n(I18nKey.myw),
-		url: "/myw/",
-	},
-	[LinkPreset.Zxy]: {
-		name: i18n(I18nKey.zxy),
-		url: "/zxy/",
-	},
+	// [LinkPreset.Lc]: {
+	// 	name: i18n(I18nKey.lc),
+	// 	url: "/lc/",
+	// },
+	// [LinkPreset.Myw]: {
+	// 	name: i18n(I18nKey.myw),
+	// 	url: "/myw/",
+	// },
+	// [LinkPreset.Zxy]: {
+	// 	name: i18n(I18nKey.zxy),
+	// 	url: "/zxy/",
+	// },
 };

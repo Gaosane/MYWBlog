@@ -7,15 +7,19 @@ import { getCategoryUrl } from "@utils/url-utils.ts";
 
 // src/config/userConfig.ts
 // 从 .astro 接收值
-let userName = "myw"; // 默认值
+// let userName = "myw"; // 默认值
 
-export function setUserName(name: string): void {
-	userName = name;
-	console.log("从 Astro 设置的用户名:", userName);
-}
+// export function setUserName(name: string): void {
+// 	userName = name;
+// 	console.log("从 Astro 设置的用户名:", userName);
+// }
 
-export function getUserName(): string {
-	return userName;
+// export function getUserName(): string {
+// 	return userName;
+// }
+
+export function formatName(lastName: string) {
+	return `${lastName}`;
 }
 
 async function getRawSortedPosts() {
@@ -53,9 +57,9 @@ export async function getSortedPostsList(): Promise<PostForList[]> {
 	const sortedFullPosts = await getRawSortedPosts();
 
 	// delete post.body
-	const sortedPostsList = sortedFullPosts.map((post) => ({
-		slug: post.slug,
-		data: post.data,
+	const sortedPostsList = sortedFullPosts.map((posts) => ({
+		slug: posts.slug,
+		data: posts.data,
 	}));
 
 	return sortedPostsList;

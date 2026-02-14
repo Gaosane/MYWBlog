@@ -3,21 +3,7 @@ import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import { getCategoryUrl } from "@utils/url-utils.ts";
 
-// Retrieve posts and sort them by publication date
-
-// src/config/userConfig.ts
-// 从 .astro 接收值
-let userName = "myw"; // 默认值
-
-export function setUserName(name: string): void {
-	userName = name;
-	console.log("从 Astro 设置的用户名:", userName);
-}
-
-export function getUserName(): string {
-	return userName;
-}
-
+// // Retrieve posts and sort them by publication date
 async function getRawSortedPosts() {
 	const allBlogPosts = await getCollection("posts", ({ data }) => {
 		return import.meta.env.PROD ? data.draft !== true : true;
@@ -47,7 +33,7 @@ export async function getSortedPosts() {
 }
 export type PostForList = {
 	slug: string;
-	data: CollectionEntry<"myw">["data"];
+	data: CollectionEntry<"posts">["data"];
 };
 export async function getSortedPostsList(): Promise<PostForList[]> {
 	const sortedFullPosts = await getRawSortedPosts();
