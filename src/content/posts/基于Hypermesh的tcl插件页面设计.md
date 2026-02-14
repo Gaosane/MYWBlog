@@ -4,7 +4,7 @@ published: 2026-02-14
 description: 利用Hypermesh快捷键方式管理TCL插件
 tags: [hypermesh, Tcl]
 category: Hypermesh
-draft: true
+draft: false
 ---
 
 
