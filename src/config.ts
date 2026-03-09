@@ -57,7 +57,6 @@ export const navBarConfig: NavBarConfig = {
 	],
 };
 
-
 // this is a list of authors
 // their folders are src/content/posts/myw, src/content/posts/lc, src/content/posts/zxy
 export const authorsConfig: AuthorConfig[] = [

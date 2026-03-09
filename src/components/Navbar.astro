@@ -3,13 +3,12 @@ import { Icon } from "astro-icon/components";
 import { navBarConfig, siteConfig } from "../config";
 import { LinkPresets } from "../constants/link-presets";
 import { LinkPreset, type NavBarLink } from "../types/config";
-import { url } from "../utils/url-utils";
+import { getAuthors } from "../utils/author-utils";
+import { getAuthorUrl, url } from "../utils/url-utils";
 import LightDarkSwitch from "./LightDarkSwitch.svelte";
 import Search from "./Search.svelte";
 import DisplaySettings from "./widget/DisplaySettings.svelte";
 import NavMenuPanel from "./widget/NavMenuPanel.astro";
-import { getAuthors } from "../utils/author-utils";
-import { getAuthorUrl } from "../utils/url-utils";
 
 const className = Astro.props.class;
 
