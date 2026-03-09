@@ -2,10 +2,15 @@ import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const en: Translation = {
+	[Key.studio]: "609 Study Room",
 	[Key.home]: "Home",
 	[Key.about]: "About",
 	[Key.archive]: "Archive",
 	[Key.search]: "Search",
+	[Key.question]: "Question",
+	[Key.lc]: "Chuan Li",
+	[Key.myw]: "Yuanwen Ma",
+	[Key.zxy]: "Xingyun Zheng",
 
 	[Key.tags]: "Tags",
 	[Key.categories]: "Categories",
