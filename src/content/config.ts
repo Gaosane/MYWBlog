@@ -11,6 +11,7 @@ const postsCollection = defineCollection({
 		tags: z.array(z.string()).optional().default([]),
 		category: z.string().optional().nullable().default(""),
 		lang: z.string().optional().default(""),
+		author: z.string(),
 
 		/* For internal use */
 		prevTitle: z.string().default(""),
@@ -45,5 +46,4 @@ export const collections = {
 	posts: postsCollection,
 	spec: specCollection,
 	question: questionCollection,
-	myw: postsCollection,
 };
