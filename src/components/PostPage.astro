@@ -4,7 +4,6 @@ import { getPostUrlBySlug } from "@utils/url-utils";
 import PostCard from "./PostCard.astro";
 
 const { page } = Astro.props;
-
 let delay = 0;
 const interval = 50;
 ---
@@ -13,6 +12,7 @@ const interval = 50;
         <PostCard
                 entry={entry}
                 title={entry.data.title}
+                author={entry.data.author}
                 tags={entry.data.tags}
                 category={entry.data.category}
                 published={entry.data.published}

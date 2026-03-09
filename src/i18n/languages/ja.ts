@@ -2,10 +2,15 @@ import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const ja: Translation = {
+	[Key.studio]: "609自習室",
 	[Key.home]: "Home",
 	[Key.about]: "About",
 	[Key.archive]: "Archive",
 	[Key.search]: "検索",
+	[Key.question]: "質問",
+	[Key.lc]: "李川",
+	[Key.myw]: "馬元文",
+	[Key.zxy]: "鄭幸運",
 
 	[Key.tags]: "タグ",
 	[Key.categories]: "カテゴリ",

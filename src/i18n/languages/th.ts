@@ -2,10 +2,15 @@ import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const th: Translation = {
+	[Key.studio]: "ห้องเรียน 609",
 	[Key.home]: "หน้าแรก",
 	[Key.about]: "เกี่ยวกับ",
 	[Key.archive]: "คลัง",
 	[Key.search]: "ค้นหา",
+	[Key.question]: "คำถาม",
+	[Key.lc]: "Chuan Li",
+	[Key.myw]: "Yuanwen Ma",
+	[Key.zxy]: "Xingyun Zheng",
 
 	[Key.tags]: "ป้ายกำกับ",
 	[Key.categories]: "หมวดหมู่",

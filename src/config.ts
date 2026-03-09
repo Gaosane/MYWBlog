@@ -7,8 +7,14 @@ import type {
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
+// they type of author is an extension of the type of ProfileConfig
+// it adds a folder for the author
+type AuthorConfig = ProfileConfig & {
+	folder: string;
+};
+
 export const siteConfig: SiteConfig = {
-	title: "小马的博客",
+	title: "609 自习室",
 	subtitle: "BLog",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
@@ -51,10 +57,90 @@ export const navBarConfig: NavBarConfig = {
 	],
 };
 
+// this is a list of authors
+// their folders are src/content/posts/myw, src/content/posts/lc, src/content/posts/zxy
+export const authorsConfig: AuthorConfig[] = [
+	{
+		folder: "myw",
+		name: "Yuanwen Ma",
+		avatar: "assets/images/myw.jpg",
+		bio: "强度工程师",
+		links: [
+			{
+				name: "wechat",
+				icon: "cib:wechat", // Visit https://icones.js.org/ for icon codes
+				// You will need to install the corresponding icon set if it's not already included
+				// `pnpm add @iconify-json/<icon-set-name>`
+				url: "https://wechat.com",
+			},
+			{
+				name: "telephone",
+				icon: "mynaui:telephone", // Visit https://icones.js.org/ for icon codes
+				url: "https://store.steampowered.com",
+			},
+			{
+				name: "GitHub",
+				icon: "fa6-brands:github",
+				url: "https://github.com/Gaosane",
+			},
+		],
+	},
+	{
+		folder: "lc",
+		name: "Chuan Li",
+		avatar: "assets/images/lc.jpg",
+		bio: "强度工程师",
+		links: [
+			{
+				name: "wechat",
+				icon: "cib:wechat", // Visit https://icones.js.org/ for icon codes
+				// You will need to install the corresponding icon set if it's not already included
+				// `pnpm add @iconify-json/<icon-set-name>`
+				url: "https://wechat.com",
+			},
+			{
+				name: "telephone",
+				icon: "mynaui:telephone", // Visit https://icones.js.org/ for icon codes
+				url: "https://store.steampowered.com",
+			},
+			{
+				name: "GitHub",
+				icon: "fa6-brands:github",
+				url: "https://github.com/Gaosane",
+			},
+		],
+	},
+	{
+		folder: "zxy",
+		name: "Xingyun Zheng",
+		avatar: "assets/images/zxy.jpg",
+		bio: "强度工程师",
+		links: [
+			{
+				name: "wechat",
+				icon: "cib:wechat", // Visit https://icones.js.org/ for icon codes
+				// You will need to install the corresponding icon set if it's not already included
+				// `pnpm add @iconify-json/<icon-set-name>`
+				url: "https://wechat.com",
+			},
+			{
+				name: "telephone",
+				icon: "mynaui:telephone", // Visit https://icones.js.org/ for icon codes
+				url: "https://store.steampowered.com",
+			},
+			{
+				name: "GitHub",
+				icon: "fa6-brands:github",
+				url: "https://github.com/Gaosane",
+			},
+		],
+	},
+];
+
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/myw.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Yuanwen Ma",
-	bio: "强度工程师",
+	avatar: "assets/images/studio.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	name: "Studio 609",
+	bio: "strength engineers' study room",
 	links: [
 		{
 			name: "wechat",
