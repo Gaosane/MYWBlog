@@ -2,10 +2,15 @@ import Key from "../i18nKey";
 import type { Translation } from "../translation";
 
 export const vi: Translation = {
+	[Key.studio]: "Phòng học 609",
 	[Key.home]: "Trang chủ",
 	[Key.about]: "Giới thiệu",
 	[Key.archive]: "Kho bài",
 	[Key.search]: "Tìm kiếm",
+	[Key.question]: "Câu hỏi",
+	[Key.lc]: "Chuan Li",
+	[Key.myw]: "Yuanwen Ma",
+	[Key.zxy]: "Xingyun Zheng",
 
 	[Key.tags]: "Thẻ",
 	[Key.categories]: "Danh mục",
