@@ -1,0 +1,52 @@
+---
+import type { GetStaticPaths, PaginateFunction } from "astro";
+import Pagination from "../../components/control/Pagination.astro";
+import PostPage from "../../components/PostPage.astro";
+import { PAGE_SIZE } from "../../constants/constants";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allBlogPosts = await getSortedPosts();
+
+  // transfer allBlogPosts to object with author as key, value is array of posts
+  const postsByAuthor = allBlogPosts.reduce(
+    (acc, post) => {
+      acc[post.data.author] = [...(acc[post.data.author] || []), post];
+      return acc;
+    },
+    {} as Record<string, CollectionEntry<"posts">[]>,
+  );
+
+  // this file's path is /[author]/[...page].astro
+  const paginationPaths = Object.keys(postsByAuthor).reduce((acc, author) => {
+    if (author === "studio609") return acc;
+
+    return [
+      ...acc,
+      ...paginate(postsByAuthor[author], {
+        pageSize: PAGE_SIZE,
+        params: { author },
+      }),
+    ];
+  }, [] as ReturnType<PaginateFunction>);
+
+  return paginationPaths;
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const { author } = Astro.params;
+
+const len = page.data.length;
+---
+
+<MainGridLayout author={author}>
+  <PostPage page={page} author={author} />
+  <Pagination
+    class="mx-auto onload-animation"
+    page={page}
+    author={author}
+    style={`animation-delay: calc(var(--content-delay) + ${len * 50}ms)`}
+  />
+</MainGridLayout>

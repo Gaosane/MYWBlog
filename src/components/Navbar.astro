@@ -8,6 +8,8 @@ import LightDarkSwitch from "./LightDarkSwitch.svelte";
 import Search from "./Search.svelte";
 import DisplaySettings from "./widget/DisplaySettings.svelte";
 import NavMenuPanel from "./widget/NavMenuPanel.astro";
+import { getAuthors } from "../utils/author-utils";
+import { getAuthorUrl } from "../utils/url-utils";
 
 const className = Astro.props.class;
 
@@ -19,18 +21,31 @@ let links: NavBarLink[] = navBarConfig.links.map(
 		return item;
 	},
 );
+
+const authors = getAuthors();
 ---
 <div id="navbar" class="z-50 onload-animation">
     <div class="absolute h-8 left-0 right-0 -top-8 bg-[var(--card-bg)] transition"></div> <!-- used for onload animation -->
     <div class:list={[
         className,
         "card-base !overflow-visible max-w-[var(--page-width)] h-[4.5rem] !rounded-t-none mx-auto flex items-center justify-between px-4"]}>
-        <a href={url('/')} class="btn-plain scale-animation rounded-lg h-[3.25rem] px-5 font-bold active:scale-95">
-            <div class="flex flex-row text-[var(--primary)] items-center text-md">
-                <Icon name="material-symbols:home-outline-rounded" class="text-[1.75rem] mb-1 mr-2" />
-                {siteConfig.title}
+        <div class="flex items-center gap-2">
+            <a href={url('/')} class="btn-plain scale-animation rounded-lg h-[3.25rem] px-5 font-bold active:scale-95">
+                <div class="flex flex-row text-[var(--primary)] items-center text-md">
+                    <Icon name="material-symbols:home-outline-rounded" class="text-[1.75rem] mb-1 mr-2" />
+                    {siteConfig.title}
+                </div>
+            </a>
+            <div class="flex items-center gap-1">
+                {authors.map((a) => {
+                    return <a href={getAuthorUrl(a)} class="btn-plain scale-animation rounded-lg h-11 font-bold px-2 active:scale-95">
+                        <div class="flex items-center">
+                            {a}
+                        </div>
+                    </a>;
+                })}
             </div>
-        </a>
+        </div>
         <div class="hidden md:flex">
             {links.map((l) => {
                 return <a aria-label={l.name} href={l.external ? l.url : url(l.url)} target={l.external ? "_blank" : null}
@@ -51,6 +66,7 @@ let links: NavBarLink[] = navBarConfig.links.map(
                         <Icon name="material-symbols:palette-outline" class="text-[1.25rem]"></Icon>
                     </button>
             )}
+            <!-- @ts-expect-error client:only is valid Astro directive -->
             <LightDarkSwitch client:only="svelte"></LightDarkSwitch>
             <button aria-label="Menu" name="Nav Menu" class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90 md:!hidden" id="nav-menu-switch">
                 <Icon name="material-symbols:menu-rounded" class="text-[1.25rem]"></Icon>

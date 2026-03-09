@@ -44,6 +44,7 @@ if (!fs.existsSync(dirPath)) {
 
 const content = `---
 title: ${args[0]}
+author: 'studio609'
 published: ${getDate()}
 description: ''
 image: ''

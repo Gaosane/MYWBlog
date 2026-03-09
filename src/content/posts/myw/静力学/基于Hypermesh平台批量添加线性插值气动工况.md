@@ -5,6 +5,7 @@ description: 气动工况线性插值
 tags: [hypermesh, Tcl]
 category: 批处理
 draft: false 
+author: myw
 ---
 # 1.引言
 &emsp;&emsp;气动载荷很难给出所有位置的详细气动数据，一般情况下会给出特定点位下的气动值，同时气动载荷一般是均匀进行加载的，Hypermesh基于这种特性有线性插值的气动载荷
